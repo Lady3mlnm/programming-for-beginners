@@ -9,8 +9,8 @@
 using namespace std;
 
 const int ATTEMPTS = 3;       //number of measuring cycles
-const string OUTPUT_FILE = "E:\\test2.txt";    //output file  -for Visual Studio
-//const char OUTPUT_FILE[] = "E:\\test2.txt";  //output file -for CodeBlocks
+const string OUTPUT_FILE = "E:\\test2.txt";    //output file  -for Visual Studio (doesn't work in CodeBlocks)
+//const char OUTPUT_FILE[] = "E:\\test2.txt";  //output file -for CodeBlocks & Visual Studio
 const int ARRAY_SIZE = 200000;
 
 void ShowArray(int *ar, int lng) {
@@ -46,6 +46,7 @@ float SortingTest(int *ar, int *arOriginal, int lng) {
     //--- SORTING ALGORITHM (END) ---
     
     //ShowArray(ar, lng);
+    
     return (float)(clock() - timeStart) / CLOCKS_PER_SEC;
 }
 
