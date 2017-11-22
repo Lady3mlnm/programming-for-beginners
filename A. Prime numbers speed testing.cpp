@@ -10,7 +10,7 @@
 using namespace std;
 
 const int ATTEMPTS = 3;  //number of measuring cycles
-const string OUTPUT_FILE = "E:\\test3.txt";     //output file -for Visual Studio (doesn't work in CodeBlocks)
+const string OUTPUT_FILE = "E:\\test3.txt";    //output file -for Visual Studio (doesn't work in CodeBlocks)
 //const char OUTPUT_FILE[] = "E:\\test3.txt";  //output file -for CodeBlocks & Visual Studio
 
 float TestedCode() {
@@ -34,7 +34,8 @@ float TestedCode() {
     //--- EXECUTION CODE (END) ---
 
     duration = (float)(clock() - timeStart) / CLOCKS_PER_SEC;
-    cout << "Amount: " << primeNumbers.size() << ",  last prime number: " << primeNumbers.back() << endl;
+    cout << "Amount: " << primeNumbers.size() <<                 //check
+            ",  last prime number: " << primeNumbers.back() << endl;
 
     return duration;
 }
@@ -61,7 +62,8 @@ int main() {
     //=== TEST CYCLE ===
     for (int countA = 0; countA<ATTEMPTS; countA++) {
         arA[countA] = TestedCode();
-        cout << "Test #" << countA + 1 << " is complete. Execution time: " << floatToString(arA[countA]) << "\n\n";
+        cout << "Test #" << countA + 1 << " is complete. " <<              //check
+                "Execution time: " << floatToString(arA[countA]) << "\n\n";
         Sleep(1000);
     }
 

@@ -25,7 +25,7 @@ void ShowArray(int *ar, int lng) {
 float SortingTest(int *ar, int *arOriginal, int lng) {
     copy(arOriginal, arOriginal+lng, ar);
 
-    //ShowArray(ar, lng);
+    //ShowArray(ar, lng);                         //check
 
     clock_t timeStart;  //variable of measuring cycle
     //*** Global variables of code ***
@@ -45,7 +45,7 @@ float SortingTest(int *ar, int *arOriginal, int lng) {
     }
     //--- SORTING ALGORITHM (END) ---
     
-    //ShowArray(ar, lng);
+    //ShowArray(ar, lng);                         //check
     
     return (float)(clock() - timeStart) / CLOCKS_PER_SEC;
 }
@@ -66,7 +66,7 @@ int main() {
     int *arTest = new int[ARRAY_SIZE];       //declaration of test array & its copy
     int *arSaving = new int[ARRAY_SIZE];
 
-    //srand(time(NULL));
+    //srand(time(NULL));       // pseudo-random number generator is not initialized
     for (int i = 0; i < ARRAY_SIZE; ++i) {   //initialization of arrays
         arTest[i] = (rand() % 1100) - 100;
     }
@@ -78,7 +78,8 @@ int main() {
     //=== TEST CYCLE ===
     for (int countA = 0; countA<ATTEMPTS; countA++) {
         arA[countA] = SortingTest(arTest, arSaving, ARRAY_SIZE);
-        cout << "Test #" << countA + 1 << " is complete. Execution time: " << floatToString(arA[countA]) << "\n\n";
+        cout << "Test #" << countA + 1 << " is complete. " <<
+                "Execution time: " << floatToString(arA[countA]) << "\n\n";
         Sleep(1000);
     }
 
