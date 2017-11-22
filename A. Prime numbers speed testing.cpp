@@ -16,9 +16,8 @@ const string OUTPUT_FILE = "E:\\test3.txt";     //output file -for Visual Studio
 float TestedCode() {
     clock_t timeStart;  //variable of measuring cycle
     //*** Global variables of code ***
-    //const int NF = 2;      //first number of range
-    float duration;
     const int NL = 1000000;  //last  number of range
+    float duration;
     vector <int> primeNumbers;
     int i, j;
 
