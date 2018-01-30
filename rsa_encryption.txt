@@ -1,0 +1,87 @@
+koshka$ mkdir rsatest
+koshka$ cd rsatest
+koshka/rsatest$ ssh-keygen 
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/koshka/.ssh/id_rsa): ./koshka.priv
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in ./koshka.priv.
+Your public key has been saved in ./koshka.priv.pub.
+The key fingerprint is:
+SHA256:jTDSXJ6zwNldwPEaRMBxiTlJOwn9TBQrWQnRf2XRMiU koshka@IAS-WS-UX02
+The key's randomart image is:
++---[RSA 2048]----+
+|      .+B&X*. Eo+|
+|     + *BX*+  o.+|
+|    . O @=+..  = |
+|     . + Boo. .  |
+|        S o  .   |
+|                 |
+|                 |
+|                 |
+|                 |
++----[SHA256]-----+
+koshka/rsatest$ cat koshka.priv
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAtWc9LOhE8goKZ6hW94ExrjneiYPDpHmOGzrzaSOU+mhU5q6D
+xopdIy8c2XBwNkA2Y6R+K4r09hllw+73X63FXoGNSBB6UwXq03Jvyv7i8TaFtyPY
+g26L3X2AIXI5PLWLu4i69tPJplF6igFlpJvX6GVapWDe6j7iLeJBUBXeSuyZjtOU
+d2VDpPCWvrNPZpjMgpEP0622mPXbkep6HndEZVQDP5toORe6ZBgXrU0090cd0Lyq
+Gxmg4m2FE2gTZE6mqSMpgJwKP63qu80nMaUQpgWlfgN1kmQt8rgqByC3ECdttcbd
+WmCfLVXc0KxvnS7qz2qfpI+xuqPEDKab0OhgiwIDAQABAoIBAQCCGWq8fFCGLkFM
+GmVU2OlihMpfYYq8uRj72omcDBLajFznnJ2RlMY7Z5yPLZ6sqdzYFa8PV3db0Nc1
+cHsluaDlqJBE8NxqEsJZp6cZtTfZuzqnICQ2DuBsl4d/dUYrjiCK/QLp5vamO6Vg
+uKPHLKXqXFZoaVM2OKdKNQyWfTiSDmzLFn+qYvUzytAPg/LkOSaxknAhKbxorX4b
+HaZYGFZjUGfZmEhULOCA+9OXirdEIA/fvZifCyr1KTo1Qdvsa1D3qG7HoYopN1e1
+KcR6jUFCM9ssGSxOsFC6xpSvIIeOWU8rzJGni0Wjuyh4CQ8DWwEZR7Us6NBX6EPu
+hfB//vPxAoGBAN4lx71g+Ky2rp5VvCGIrk5fZaklEauadNthdJUjlVAtVpzpIboV
+pWHajpBARwuU/MNvStMmUl6Jhs66WTuRbbp5QKz9o4r29VqFK4udrd44eqUWy5t9
+IedgtPvcWmxD79VNXkwah3WbFBu+Ti/MGM4s2i0x9YPejNz93fK50ZPVAoGBANEL
++p/5bFdddHX+0pY7tK+631Bll+17e0nYcfcIBuajCFSEP2QxeHE7mEwHaTsBJiIh
+JTGHfQ4Ug1OcFUvYX3X4IDy+I/vaoy+ZacsMcgHm4DB/KNEvIHHXyW2DKnkIzNhV
+bxszHrsC4HdiSzaWhlHbf5T8itWyj7r1PXZUFTLfAoGAB0cPkxmxK99UOyWt4x9a
+LoEbkH4BZTDLMUCxFA21X4oMs1lD3JfG8jy5vOoOKcf4u+JSfjZcLnKs8urR74yl
+Hp3IS6KHkA7lHNEOCyXgQ05wXiYwB2kDClR1uWaPo8pZ+g/tzep0k5q//uSuJQy3
+p1F62E4xr99DmB3M/p2tyv0CgYBjJaZRt2++I/H3gMuKO3kgG6aMsBKVrQo1ZPXw
+bxsuykZKJ4sVTy1LrzM1ZBJxzMK0Tzofup4CTpJW1mF3XoEwJ2XKyXexnOnmyoFV
+r2pnIoRUHAtU42Ak/m5nhV1gmF7nf+W5Zc5+bgfeN31qv4unSU7Cb+C9J/ppdqUW
++RwwywKBgQDDcl1XnTGJZRyphecrU9NYDRYO0MewGjEJNbhDQdznaT15X7kyqmSw
+yUoiic0Wb3Hm2UnGBX8/WF/HNdG84zoivZxQDj8e39nsXKlX06SzNixqXf2zLkwe
+3RuUmTMCEeNDbhtFS+j0j+mS3XlHCzsM/1vfGX4CuERvvT9imIPn9g==
+-----END RSA PRIVATE KEY-----
+koshka/rsatest$ openssl rsa -in koshka.priv -pubout > koshka.pub
+writing RSA key
+koshka/rsatest$ cat koshka.pub 
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtWc9LOhE8goKZ6hW94Ex
+rjneiYPDpHmOGzrzaSOU+mhU5q6DxopdIy8c2XBwNkA2Y6R+K4r09hllw+73X63F
+XoGNSBB6UwXq03Jvyv7i8TaFtyPYg26L3X2AIXI5PLWLu4i69tPJplF6igFlpJvX
+6GVapWDe6j7iLeJBUBXeSuyZjtOUd2VDpPCWvrNPZpjMgpEP0622mPXbkep6HndE
+ZVQDP5toORe6ZBgXrU0090cd0LyqGxmg4m2FE2gTZE6mqSMpgJwKP63qu80nMaUQ
+pgWlfgN1kmQt8rgqByC3ECdttcbdWmCfLVXc0KxvnS7qz2qfpI+xuqPEDKab0Ohg
+iwIDAQAB
+-----END PUBLIC KEY-----
+koshka/rsatest$ echo "Слава Котам!!!" > test
+koshka/rsatest$ cat test 
+Слава Котам!!! 
+koshka/rsatest$ man rsautl 
+koshka/rsatest$ openssl rsautl -encrypt -pubin -inkey koshka.pub < test > test.encrypted
+koshka/rsatest$ md5sum test.encrypted 
+a059249230e28dd786adbcba0f99461a  test.encrypted
+koshka/rsatest$ cat test.encrypted | base64 > test.encrypted.base64
+koshka/rsatest$ cat test.encrypted.base64 
+lqnSwMk8nQjaybckellftPsCvYlq+qev0russK4UybBxv/0JSxqy1O8kxpiI8LBVi3UCpO3F3kEy
+CY8ClaAWWUweEFLmWl8IydYeRYL/qrePXUv5aN7bj3LNqJC1/CmT+f5zNZlE9pegL6ZeftmhhsTo
+KPbjx+HVuSZzac+MYh5jnIU19FwxppU03tB18uAjP7knmIbeH7sflOY1nAayFP8HQfyp2AcIMBoa
+RuUo/EUNeiMi3yC9eWO/XEeuLFszszFRxstH8MFiMjEQWx8B7dcE14d8PiHyk/kAROtbPXEHvsUE
++d0jcxp5pax1bWSX1abz49s5hh/GlnlmGK8Ufw==
+koshka/rsatest$ cat test.encrypted.base64 | base64 -d > test.encrypted.base64_dec
+koshka/rsatest$ md5sum test.encrypted.base64_dec
+a059249230e28dd786adbcba0f99461a  test.encrypted.base64_dec
+koshka/rsatest$ md5sum test.encrypted
+a059249230e28dd786adbcba0f99461a  test.encrypted
+koshka/rsatest$ openssl rsautl -decrypt -inkey koshka.priv < test.encrypted.base64_dec > test.decrypted
+koshka/rsatest$ cat test.decrypted 
+Слава Котам!!! 
+koshka/rsatest$ 
+
